@@ -26,7 +26,7 @@
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  background: url("https://fskittyfire.github.io/FireSaints-Controller-Skin/assets/tribal-overlay.svg?v=3")
+  background: url("https://fskittyfire.github.io/FireSaints-Controller-Skin/assets/tribal-overlay.svg?v=4")
               center / 100% 100% no-repeat;
   opacity: .9;
   mix-blend-mode: screen;
@@ -75,7 +75,7 @@
   opacity: 1;
 }
 
-/* Bumpers, triggers, sticks, and menu controls: purple active glow. */
+/* Bumpers, triggers, sticks, and menu controls: FireSaints violet active glow. */
 .xbox .bumper,
 .xbox .trigger,
 .xbox .stick,
@@ -90,8 +90,9 @@
 .xbox .back.pressed,
 .xbox .start.pressed {
   filter:
-    drop-shadow(0 0 4px var(--fs-purple-bright))
-    drop-shadow(0 0 10px var(--fs-glow-strong));
+    drop-shadow(0 0 5px #d49aff)
+    drop-shadow(0 0 12px rgba(153, 45, 255, .98))
+    drop-shadow(0 0 20px rgba(112, 20, 220, .72));
 }
 
 /* Player LEDs: FireSaints purple. */
