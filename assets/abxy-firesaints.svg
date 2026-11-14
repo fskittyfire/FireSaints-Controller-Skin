@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="196" height="96" viewBox="0 0 196 96">
+  <defs>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#25232c"/>
+      <stop offset="1" stop-color="#08080c"/>
+    </linearGradient>
+    <linearGradient id="pressed" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#30243a"/>
+      <stop offset="1" stop-color="#09070e"/>
+    </linearGradient>
+  </defs>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" text-anchor="middle" dominant-baseline="central">
+    <g transform="translate(0 0)">
+      <circle cx="24" cy="24" r="19.5" fill="url(#body)" stroke="#55515f" stroke-width="2"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#111016" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#d1ced9">A</text>
+    </g>
+    <g transform="translate(49 0)">
+      <circle cx="24" cy="24" r="19.5" fill="url(#body)" stroke="#55515f" stroke-width="2"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#111016" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#d1ced9">B</text>
+    </g>
+    <g transform="translate(98 0)">
+      <circle cx="24" cy="24" r="19.5" fill="url(#body)" stroke="#55515f" stroke-width="2"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#111016" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#d1ced9">X</text>
+    </g>
+    <g transform="translate(147 0)">
+      <circle cx="24" cy="24" r="19.5" fill="url(#body)" stroke="#55515f" stroke-width="2"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#111016" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#d1ced9">Y</text>
+    </g>
+    <g transform="translate(0 48)">
+      <circle cx="24" cy="24" r="19.5" fill="url(#pressed)" stroke="#a75cff" stroke-width="2.5"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#39204f" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#ded8e8">A</text>
+    </g>
+    <g transform="translate(49 48)">
+      <circle cx="24" cy="24" r="19.5" fill="url(#pressed)" stroke="#a75cff" stroke-width="2.5"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#39204f" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#ded8e8">B</text>
+    </g>
+    <g transform="translate(98 48)">
+      <circle cx="24" cy="24" r="19.5" fill="url(#pressed)" stroke="#a75cff" stroke-width="2.5"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#39204f" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#ded8e8">X</text>
+    </g>
+    <g transform="translate(147 48)">
+      <circle cx="24" cy="24" r="19.5" fill="url(#pressed)" stroke="#a75cff" stroke-width="2.5"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#39204f" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#ded8e8">Y</text>
+    </g>
+  </g>
+</svg>
