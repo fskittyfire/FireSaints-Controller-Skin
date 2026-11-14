@@ -1,49 +1,31 @@
 /*
   FIRESAINTS — GPV 2 / Xbox One skin
-  Custom edit stylesheet for the existing GPV Xbox controller.
-  Base controller geometry and Gamepad API input handling remain GPV-owned.
+  Revision 2: appearance-only CSS.
+  Deliberately does NOT change controller positioning, dimensions, transforms,
+  overflow, body sizing, or GPV's input/layout structure.
 */
 
 :root {
-  --fs-shell: #09090d;
   --fs-purple-deep: #32105c;
   --fs-purple: #8b35d6;
   --fs-purple-bright: #c58bff;
   --fs-silver: #bfc3cc;
-  --fs-silver-dark: #666b76;
   --fs-glow: rgba(155, 70, 255, .78);
-  --fs-glow-soft: rgba(132, 52, 220, .42);
 }
 
-body {
-  margin: 0;
-  overflow: hidden;
-  background: transparent;
-}
+/*
+  IMPORTANT:
+  Leave .controller.xbox geometry to GPV's native skin.
+  The previous revision forced position:relative and added an absolutely
+  positioned pseudo-element. That could disturb GPV's existing layout and
+  is intentionally removed in this revision.
+*/
 
-/* Keep the stock Xbox silhouette and GPV layout; add our transparent artwork layer. */
 .controller.xbox {
-  position: relative;
-  overflow: visible;
-  filter: drop-shadow(0 0 8px rgba(113, 40, 180, .22));
+  filter: drop-shadow(0 0 7px rgba(113, 40, 180, .20));
 }
 
-.controller.xbox::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: url("assets/tribal-overlay.svg") center / 100% 100% no-repeat;
-  opacity: .96;
-}
-
-/* GPV controls stay above the decorative artwork. */
-.controller.xbox > div {
-  z-index: 2;
-}
-
-/* Silver-toned control faces with restrained purple edge lighting. */
+/* Smooth transitions without changing the size or position of controls. */
 .xbox .button,
 .xbox .face,
 .xbox .stick,
@@ -51,13 +33,13 @@ body {
 .xbox .trigger,
 .xbox .back,
 .xbox .start {
-  transition: filter 120ms ease, opacity 120ms ease, box-shadow 120ms ease;
+  transition: filter 140ms ease, opacity 140ms ease;
 }
 
-/* ABXY: silver faces, retaining GPV's original button positioning and input states. */
+/* Silver-toned ABXY faces; retain native geometry and button state. */
 .xbox .button {
   filter: grayscale(1) brightness(1.42) contrast(1.08);
-  opacity: .94;
+  opacity: .96;
 }
 
 .xbox .button.pressed {
@@ -67,10 +49,10 @@ body {
   opacity: 1;
 }
 
-/* D-pad: metallic silver at rest, purple when pressed. */
+/* D-pad: silver at rest, purple glow while pressed. */
 .xbox .face {
-  filter: grayscale(1) brightness(1.45) contrast(1.1);
-  opacity: .88;
+  filter: grayscale(1) brightness(1.42) contrast(1.08);
+  opacity: .92;
 }
 
 .xbox .face.pressed {
@@ -80,22 +62,22 @@ body {
   opacity: 1;
 }
 
-/* Thumbsticks: dark metal with a purple edge; click state gets a stronger halo. */
+/* Thumbsticks: dark metallic treatment; glow on stick click. */
 .xbox .stick {
-  filter: grayscale(1) brightness(.9) contrast(1.18)
-          drop-shadow(0 0 2px rgba(177, 125, 230, .35));
+  filter: grayscale(1) brightness(.92) contrast(1.16)
+          drop-shadow(0 0 2px rgba(177, 125, 230, .30));
 }
 
 .xbox .stick.pressed {
-  filter: grayscale(1) brightness(1.5)
+  filter: grayscale(1) brightness(1.45)
           drop-shadow(0 0 5px var(--fs-purple-bright))
-          drop-shadow(0 0 13px var(--fs-glow));
+          drop-shadow(0 0 12px var(--fs-glow));
 }
 
-/* Bumpers and triggers illuminate independently when GPV marks them active. */
+/* Bumpers and triggers glow independently when pressed/active. */
 .xbox .bumper,
 .xbox .trigger {
-  filter: grayscale(1) brightness(1.35);
+  filter: grayscale(1) brightness(1.30);
 }
 
 .xbox .bumper.pressed,
@@ -106,25 +88,16 @@ body {
   opacity: 1;
 }
 
-/* Menu / view buttons. */
+/* View and menu controls. */
 .xbox .back,
 .xbox .start {
-  filter: grayscale(1) brightness(1.45);
+  filter: grayscale(1) brightness(1.42);
 }
 
 .xbox .back.pressed,
 .xbox .start.pressed {
-  filter: grayscale(1) brightness(2)
+  filter: grayscale(1) brightness(1.95)
           drop-shadow(0 0 5px var(--fs-purple-bright))
-          drop-shadow(0 0 11px var(--fs-glow));
+          drop-shadow(0 0 10px var(--fs-glow));
   opacity: 1;
-}
-
-/* Purple illumination stays subtle when idle, stronger only during input. */
-.controller.xbox:not(.disconnected) {
-  filter: drop-shadow(0 0 7px rgba(132, 52, 220, .22));
-}
-
-.controller.xbox.disconnected::before {
-  opacity: .48;
 }
