@@ -1,83 +1,76 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420">
 <defs>
- <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#26083f"/><stop offset=".25" stop-color="#7021b5"/><stop offset=".52" stop-color="#d29aff"/><stop offset=".76" stop-color="#8730d0"/><stop offset="1" stop-color="#26083f"/></linearGradient>
- <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#555b68"/><stop offset=".24" stop-color="#e0e3eb"/><stop offset=".48" stop-color="#858c9a"/><stop offset=".7" stop-color="#f5f5fa"/><stop offset="1" stop-color="#515663"/></linearGradient>
- <linearGradient id="plate" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#34303e"/><stop offset=".45" stop-color="#111018"/><stop offset="1" stop-color="#302039"/></linearGradient>
- <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#230638"/><stop offset=".24" stop-color="#6d19b7"/><stop offset=".52" stop-color="#c77aff"/><stop offset=".76" stop-color="#7a20c8"/><stop offset="1" stop-color="#210532"/></linearGradient>
+ <linearGradient id="silver" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#51545f"/><stop offset=".22" stop-color="#f1f1f5"/><stop offset=".43" stop-color="#858995"/><stop offset=".68" stop-color="#e4e5eb"/><stop offset="1" stop-color="#424650"/></linearGradient>
+ <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#292632"/><stop offset=".45" stop-color="#09080d"/><stop offset="1" stop-color="#292331"/></linearGradient>
+ <filter id="purpleGlow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
  <clipPath id="shell"><path d="M76 104 Q103 83 151 77 L190 91 Q211 76 260 76 Q309 76 330 91 L369 77 Q417 83 444 104 Q468 149 478 229 Q486 302 452 335 Q428 359 404 341 L349 289 Q329 271 306 271 H214 Q191 271 171 289 L116 341 Q92 359 68 335 Q34 302 42 229 Q52 149 76 104Z"/></clipPath>
- <g id="grip">
-  <!-- Armoured grip panel silhouette -->
-  <path d="M57 151 L91 113 L132 101 L170 126 L190 171 L174 205 L160 252 L128 316 L91 344 L59 322 L43 277 L48 213Z" fill="url(#plate)" fill-opacity=".72" stroke="url(#silver)" stroke-width="2"/>
-  <path d="M62 158 L96 122 L130 112 L161 133 L178 171 L162 199 L151 244 L123 303 L91 330 L65 312 L53 274 L56 214Z" fill="none" stroke="url(#violet)" stroke-width="3" filter="url(#glow)"/>
-  <!-- Main multi-pronged flame -->
-  <g fill="none" stroke-linecap="square" stroke-linejoin="miter">
-   <path d="M57 278 L76 246 L70 220 L96 232 L88 194 L116 208 L109 168 L137 190 L143 151 L163 181 L177 169 L169 211 L151 237 L143 273 L119 307 L91 326" stroke="url(#violet)" stroke-width="9" filter="url(#glow)"/>
-   <path d="M67 281 L88 250 L83 231 L103 241 L99 210 L119 222 L118 187 L138 207 L151 183 L153 218 L136 246 L130 275 L108 307 L89 318" stroke="url(#silver)" stroke-width="2.5"/>
-   <path d="M77 290 L99 264 L94 247 L114 258 L112 232 L130 244 L132 220" stroke="#d7b2ff" stroke-width="2" opacity=".95"/>
-  </g>
-  <!-- Angular segmented armour fins -->
-  <g fill="none" stroke="url(#silver)" stroke-width="2.2">
-   <path d="M51 187 L74 169 L89 144 L111 132"/>
-   <path d="M47 221 L68 207 L80 187"/>
-   <path d="M54 301 L77 315 L94 340"/>
-   <path d="M101 111 L128 126 L145 145"/>
-   <path d="M126 333 L149 303 L169 286"/>
-   <path d="M145 112 L165 128 L180 153"/>
-  </g>
-  <g fill="none" stroke="url(#violet)" stroke-width="3" filter="url(#glow)">
-   <path d="M49 170 L65 153 L81 151 L96 135"/>
-   <path d="M45 245 L61 239 L72 249"/>
-   <path d="M70 329 L87 340 L103 339"/>
-   <path d="M133 348 L150 329 L160 326"/>
-  </g>
-  <!-- Fine engraved circuit traces -->
-  <g fill="none" stroke="#c58bff" stroke-width="1.5" opacity=".95">
-   <path d="M55 136 H76 L88 124 H105"/><path d="M48 147 H67 L78 137"/>
-   <path d="M47 290 H63 L75 302 H88"/><path d="M103 350 L118 335 H132"/>
-   <path d="M156 99 L169 111 V124 H183"/><path d="M170 257 L184 244 V228"/>
-  </g>
-  <g fill="#d7b2ff"><circle cx="76" cy="124" r="2.5"/><circle cx="67" cy="137" r="2"/><circle cx="63" cy="302" r="2.2"/><circle cx="118" cy="335" r="2"/><circle cx="169" cy="111" r="2.2"/><circle cx="184" cy="244" r="2"/></g>
-  <!-- Rivets -->
-  <g fill="#dce0e9" stroke="#555b68" stroke-width="1"><circle cx="69" cy="177" r="3"/><circle cx="91" cy="119" r="3"/><circle cx="151" cy="128" r="3"/><circle cx="82" cy="321" r="3"/><circle cx="145" cy="309" r="3"/></g>
+ <g id="leftFlame">
+  <!-- Broad, flowing flame ribbons -->
+  <path d="M40 282 C67 245 69 210 52 181 C92 194 104 225 91 255 C121 223 126 190 111 158 C154 180 169 215 151 250 C174 232 188 204 188 179 C209 218 192 253 166 278 C142 303 111 319 83 354 C89 321 106 300 125 283 C99 298 72 319 59 352 C46 333 40 307 40 282Z" fill="url(#violet)" opacity=".72" filter="url(#softGlow)"/>
+  <path d="M46 270 C77 231 76 207 62 190 C94 207 98 235 84 261 C113 236 122 210 111 181 C142 207 145 231 130 260 C156 243 169 219 174 198" fill="none" stroke="#1b0929" stroke-width="9"/>
+  <path d="M48 275 C75 239 77 213 62 190 M84 260 C111 232 120 209 111 181 M130 260 C154 238 166 218 174 198" fill="none" stroke="#b86aff" stroke-width="2.3" filter="url(#purpleGlow)"/>
+  <!-- Silver blade edges -->
+  <path d="M47 281 C65 249 65 225 54 207 C75 221 83 240 77 261" fill="none" stroke="url(#silver)" stroke-width="3.6"/>
+  <path d="M91 321 C124 291 148 278 170 250 C161 284 133 313 103 337" fill="none" stroke="url(#silver)" stroke-width="2.8"/>
+  <path d="M50 157 C72 130 91 118 120 111 C94 132 79 151 69 174" fill="none" stroke="url(#silver)" stroke-width="2.2"/>
+  <!-- Sharp black cutouts -->
+  <path d="M54 230 L91 205 L74 236 L106 221 L85 254 L53 267Z" fill="#08070c"/>
+  <path d="M104 290 L146 262 L128 292 L158 277 L126 313 L91 329Z" fill="#08070c"/>
+  <!-- Etched streaks -->
+  <g fill="none" stroke="#d4a2ff" stroke-width="1.4" opacity=".9"><path d="M55 294 L76 276 L86 258"/><path d="M95 341 L119 321 L139 303"/><path d="M74 151 L95 135 L114 129"/><path d="M138 181 L153 199 L157 218"/></g>
+  <!-- Studs -->
+  <g fill="url(#silver)" stroke="#292632" stroke-width="1"><circle cx="64" cy="180" r="2.8"/><circle cx="91" cy="133" r="2.5"/><circle cx="145" cy="291" r="2.4"/><circle cx="77" cy="325" r="2.5"/></g>
  </g>
 </defs>
 <g clip-path="url(#shell)">
- <use href="#grip"/><use href="#grip" transform="translate(520 0) scale(-1 1)"/>
- <!-- Outer shell racing pinstripes -->
- <g fill="none" stroke="url(#silver)" stroke-width="2.2" opacity=".9">
-  <path d="M67 109 Q111 77 158 88 L190 105 L205 121"/><path d="M453 109 Q409 77 362 88 L330 105 L315 121"/>
-  <path d="M42 231 Q48 157 82 119"/><path d="M478 231 Q472 157 438 119"/>
-  <path d="M82 343 Q107 365 137 337 L174 299"/><path d="M438 343 Q413 365 383 337 L346 299"/>
+ <!-- dark layered shell panels, intentionally translucent so GPV controls remain visible -->
+ <path d="M66 111 Q105 80 157 86 L192 105 L208 133 L179 160 L145 139 L110 158 L76 205 L49 248Z" fill="url(#steel)" opacity=".38" stroke="url(#silver)" stroke-width="2"/>
+ <path d="M454 111 Q415 80 363 86 L328 105 L312 133 L341 160 L375 139 L410 158 L444 205 L471 248Z" fill="url(#steel)" opacity=".38" stroke="url(#silver)" stroke-width="2"/>
+ <!-- Top shoulder armour -->
+ <path d="M72 111 Q105 69 163 75 L195 94 L181 108 L150 91 L104 103Z" fill="url(#silver)" opacity=".85"/>
+ <path d="M448 111 Q415 69 357 75 L325 94 L339 108 L370 91 L416 103Z" fill="url(#silver)" opacity=".85"/>
+ <path d="M80 110 Q116 82 153 84 L184 101 M440 110 Q404 82 367 84 L336 101" fill="none" stroke="#c77aff" stroke-width="3" filter="url(#purpleGlow)"/>
+ <!-- Mirror flame artwork on both grips -->
+ <use href="#leftFlame"/><use href="#leftFlame" transform="translate(520 0) scale(-1 1)"/>
+ <!-- Sweeping center tendrils framing sticks and D-pad -->
+ <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M155 124 C190 143 197 173 181 202 C164 231 151 245 143 268 C180 247 199 220 211 190" stroke="#160923" stroke-width="17"/>
+  <path d="M155 124 C190 143 197 173 181 202 C164 231 151 245 143 268 C180 247 199 220 211 190" stroke="url(#violet)" stroke-width="6" filter="url(#purpleGlow)"/>
+  <path d="M365 124 C330 143 323 173 339 202 C356 231 369 245 377 268 C340 247 321 220 309 190" stroke="#160923" stroke-width="17"/>
+  <path d="M365 124 C330 143 323 173 339 202 C356 231 369 245 377 268 C340 247 321 220 309 190" stroke="url(#violet)" stroke-width="6" filter="url(#purpleGlow)"/>
+  <path d="M177 280 C207 264 220 245 229 222 M343 280 C313 264 300 245 291 222" stroke="url(#silver)" stroke-width="3"/>
+  <path d="M183 295 C215 278 228 260 237 244 M337 295 C305 278 292 260 283 244" stroke="#8f39d3" stroke-width="2.5" filter="url(#softGlow)"/>
  </g>
- <g fill="none" stroke="url(#violet)" stroke-width="4" filter="url(#glow)">
-  <path d="M74 105 L112 88 L151 91 L181 108"/><path d="M446 105 L408 88 L369 91 L339 108"/>
-  <path d="M49 265 Q55 311 83 331"/><path d="M471 265 Q465 311 437 331"/>
-  <path d="M180 317 L199 298 L217 294"/><path d="M340 317 L321 298 L303 294"/>
+ <!-- Lower bridge armour and top central bevels -->
+ <path d="M177 304 L202 286 L225 289 L238 300 L282 300 L295 289 L318 286 L343 304 L326 313 L305 302 L215 302 L194 313Z" fill="url(#steel)" stroke="url(#silver)" stroke-width="2"/>
+ <path d="M211 293 L231 296 L240 304 H280 L289 296 L309 293" fill="none" stroke="#c77aff" stroke-width="2.5" filter="url(#purpleGlow)"/>
+ <!-- Micro technical lines and bolts -->
+ <g fill="none" stroke="url(#silver)" stroke-width="1.4" opacity=".85">
+  <path d="M191 116 L207 128 H226 M329 116 L313 128 H294"/>
+  <path d="M180 318 L198 307 L213 307 M340 318 L322 307 L307 307"/>
+  <path d="M72 119 L91 108 L109 108 M448 119 L429 108 L411 108"/>
+  <path d="M58 346 L79 358 L101 352 M462 346 L441 358 L419 352"/>
  </g>
- <!-- Bridge side plates and mechanical detailing -->
- <g fill="url(#plate)" stroke="url(#silver)" stroke-width="1.5" opacity=".92">
-  <path d="M187 91 L211 82 L229 91 L219 111 L197 113Z"/><path d="M333 91 L309 82 L291 91 L301 111 L323 113Z"/>
-  <path d="M185 276 L211 266 L231 277 L216 294 L192 296Z"/><path d="M335 276 L309 266 L289 277 L304 294 L328 296Z"/>
- </g>
- <g fill="none" stroke="#c58bff" stroke-width="2">
-  <path d="M194 96 L211 89 L221 96 L214 105"/><path d="M326 96 L309 89 L299 96 L306 105"/>
-  <path d="M195 282 L212 273 L222 280 L214 288"/><path d="M325 282 L308 273 L298 280 L306 288"/>
- </g>
- <!-- Micro etching, mirrored serial marks -->
- <g fill="none" stroke="url(#silver)" stroke-width="1.3" opacity=".8">
-  <path d="M203 125 H224 L233 134 H244"/><path d="M317 125 H296 L287 134 H276"/>
-  <path d="M190 310 H211 L222 301"/><path d="M330 310 H309 L298 301"/>
-  <path d="M236 91 L246 101 H274 L284 91"/>
- </g>
- <g fill="#c58bff"><circle cx="233" cy="134" r="2"/><circle cx="287" cy="134" r="2"/><circle cx="222" cy="301" r="2"/><circle cx="298" cy="301" r="2"/></g>
+ <g fill="#c58bff" filter="url(#softGlow)"><circle cx="207" cy="128" r="2"/><circle cx="313" cy="128" r="2"/><circle cx="198" cy="307" r="2"/><circle cx="322" cy="307" r="2"/></g>
+ <!-- Branding panels on lower grips -->
+ <path d="M56 278 Q81 251 111 258 L147 279 L126 318 Q93 347 63 331Z" fill="#09070f" fill-opacity=".48" stroke="url(#silver)" stroke-width="1.8"/>
+ <path d="M464 278 Q439 251 409 258 L373 279 L394 318 Q427 347 457 331Z" fill="#09070f" fill-opacity=".48" stroke="url(#silver)" stroke-width="1.8"/>
+ <path d="M63 284 Q88 263 112 267 M457 284 Q432 263 408 267" fill="none" stroke="#9a43df" stroke-width="2.4" filter="url(#purpleGlow)"/>
 </g>
-<!-- Central FireSaints insignia -->
-<g transform="translate(260 307)">
- <path d="M-48 -14 L-28 -29 L-9 -23 L0 -31 L9 -23 L28 -29 L48 -14 L37 13 L0 34 L-37 13Z" fill="#100d17" stroke="url(#silver)" stroke-width="2.5"/>
- <path d="M-37 -12 L-22 -22 L-7 -17 L0 -23 L7 -17 L22 -22 L37 -12 L28 9 L0 25 L-28 9Z" fill="url(#plate)" stroke="url(#violet)" stroke-width="3" filter="url(#glow)"/>
- <path d="M-27 -9 L-14 -16 L0 -11 L14 -16 L27 -9" fill="none" stroke="#e8d8fa" stroke-width="1.5"/>
- <text x="0" y="8" text-anchor="middle" font-family="Arial Black,Arial,sans-serif" font-size="21" font-weight="900" letter-spacing="-1.8" fill="#f1e9fb">FS</text>
- <path d="M-57 0 H-45 M45 0 H57" stroke="url(#silver)" stroke-width="2"/>
- <path d="M-5 30 L0 38 L5 30" fill="none" stroke="#c58bff" stroke-width="2"/>
+<!-- Left FireSaints wordmark -->
+<g transform="translate(101 300) rotate(-13)">
+ <path d="M-31 -25 L-20 -34 L-12 -22 L-4 -38 L4 -23 L15 -33 L17 -17" fill="none" stroke="url(#violet)" stroke-width="2.4" filter="url(#softGlow)"/>
+ <text x="0" y="0" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-weight="bold" font-size="23" letter-spacing="-1.4" fill="#bd79f4" stroke="#210b34" stroke-width=".7" paint-order="stroke">FireSaints</text>
+ <path d="M-39 8 Q0 19 41 -4" fill="none" stroke="url(#silver)" stroke-width="1.6"/>
+ <path d="M-28 14 L-8 9 L8 13 L29 3" fill="none" stroke="#8d39d0" stroke-width="2"/>
+</g>
+<!-- Right crowned FS monogram -->
+<g transform="translate(421 296) rotate(8)">
+ <path d="M-27 -38 L-20 -54 L-10 -42 L0 -62 L10 -42 L21 -54 L27 -37" fill="none" stroke="url(#silver)" stroke-width="3" stroke-linejoin="miter"/>
+ <path d="M-29 -35 H29" stroke="#c58bff" stroke-width="2.5" filter="url(#purpleGlow)"/>
+ <text x="0" y="11" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-weight="bold" font-size="47" letter-spacing="-7" fill="url(#silver)" stroke="#100b18" stroke-width="1.3" paint-order="stroke">FS</text>
+ <path d="M-34 22 L-8 29 L8 25 L34 15" fill="none" stroke="#9c42e0" stroke-width="3"/>
 </g>
 </svg>
