@@ -1,17 +1,83 @@
 /*
-  FIRESAINTS — GPV 2 diagnostic test
-  Temporary test: remove controller filter glow and force the A button magenta.
-  No geometry or positioning changes.
+  FIRESAINTS — GPV 2 / Xbox controller
+  Revision 5: restore the native face-button artwork; dark buttons with
+  silver symbols, matched silver D-pad, purple pressed glow and LEDs.
+  No geometry or positioning overrides.
 */
 
-.controller.xbox {
-  filter: none !important;
-  box-shadow: none !important;
+:root {
+  --fs-purple: #8b35d6;
+  --fs-purple-bright: #c58bff;
+  --fs-glow: rgba(155, 70, 255, .82);
 }
 
-.xbox .a {
-  background-image: none !important;
-  background: #ff00ff !important;
-  filter: none !important;
-  box-shadow: none !important;
+/* Keep the controller shell neutral; pressed controls provide the glow. */
+.controller.xbox {
+  filter: none;
+  box-shadow: none;
+}
+
+/* Face buttons: preserve GPV's artwork, desaturate its colored symbols,
+   and darken the button body rather than replacing the image. */
+.xbox .button {
+  background-color: #09090d;
+  filter: grayscale(1) brightness(.78) contrast(1.3);
+  opacity: 1;
+  transition: filter 140ms ease, opacity 140ms ease;
+}
+
+.xbox .button.pressed {
+  background-color: #09090d;
+  filter: grayscale(1) brightness(1.05) contrast(1.35)
+          drop-shadow(0 0 4px var(--fs-purple-bright))
+          drop-shadow(0 0 10px var(--fs-glow));
+  opacity: 1;
+}
+
+/* Keep the D-pad silver, slightly darker than bright white. */
+.xbox .face {
+  filter: grayscale(1) brightness(.82) contrast(1.12);
+  opacity: 1;
+  transition: filter 140ms ease, opacity 140ms ease;
+}
+
+.xbox .face.pressed {
+  filter: grayscale(1) brightness(1.08) contrast(1.15)
+          drop-shadow(0 0 4px var(--fs-purple-bright))
+          drop-shadow(0 0 10px var(--fs-glow));
+  opacity: 1;
+}
+
+/* Other controls retain their native artwork and gain purple feedback. */
+.xbox .stick,
+.xbox .bumper,
+.xbox .back,
+.xbox .start {
+  transition: filter 140ms ease;
+}
+
+.xbox .stick.pressed,
+.xbox .bumper.pressed,
+.xbox .back.pressed,
+.xbox .start.pressed {
+  filter: drop-shadow(0 0 4px var(--fs-purple-bright))
+          drop-shadow(0 0 10px var(--fs-glow));
+}
+
+/* Analog trigger fill: purple while active. */
+.xbox .trigger {
+  filter: none;
+}
+
+.xbox .trigger.pressed {
+  filter: hue-rotate(245deg) saturate(1.8)
+          drop-shadow(0 0 4px var(--fs-purple-bright))
+          drop-shadow(0 0 9px var(--fs-glow));
+}
+
+/* Player indicator LEDs: confirmed working in GPV. */
+.xbox .quadrant {
+  filter: brightness(0) saturate(100%) invert(42%) sepia(82%)
+          saturate(1800%) hue-rotate(242deg) brightness(102%) contrast(105%)
+          drop-shadow(0 0 3px var(--fs-purple-bright));
 }
