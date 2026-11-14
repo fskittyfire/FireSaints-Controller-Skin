@@ -1,0 +1,21 @@
+/*
+  FireSaints — GPV 2 Xbox One skin
+  Status: scaffold only; no selectors are enabled yet.
+
+  IMPORTANT:
+  GPV 2's exact Xbox skin DOM/classes must be verified before styling.
+  Do not paste this scaffold into GPV as a finished skin.
+
+  Design tokens for the FireSaints palette:
+*/
+:root {
+  --fs-shell: #09090D;
+  --fs-tribal-purple: #32105C;
+  --fs-purple: #8B35D6;
+  --fs-purple-highlight: #C58BFF;
+  --fs-silver: #BFC3CC;
+  --fs-silver-dark: #666B76;
+  --fs-purple-glow: rgba(155, 70, 255, 0.75);
+}
+
+/* Verified GPV 2 Xbox selectors will be added below. */
