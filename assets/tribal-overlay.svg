@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 420">
+  <defs>
+    <linearGradient id="violet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4b1680"/>
+      <stop offset=".48" stop-color="#9a48ed"/>
+      <stop offset="1" stop-color="#35105e"/>
+    </linearGradient>
+    <linearGradient id="silver" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#666b76"/>
+      <stop offset=".5" stop-color="#e0e2e8"/>
+      <stop offset="1" stop-color="#777d89"/>
+    </linearGradient>
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="2.4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="shell">
+      <path d="M76 104 Q103 83 151 77 L190 91 Q211 76 260 76 Q309 76 330 91 L369 77 Q417 83 444 104 Q468 149 478 229 Q486 302 452 335 Q428 359 404 341 L349 289 Q329 271 306 271 H214 Q191 271 171 289 L116 341 Q92 359 68 335 Q34 302 42 229 Q52 149 76 104Z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#shell)" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Left grip tribal engraving -->
+    <g stroke="url(#violet)" stroke-width="5" opacity=".92" filter="url(#softGlow)">
+      <path d="M54 190 Q90 174 112 194 Q126 207 115 224 Q105 240 83 231 Q67 224 76 211 Q84 202 94 210"/>
+      <path d="M47 242 Q83 250 101 270 Q114 286 99 302 Q86 315 69 302"/>
+      <path d="M70 164 Q100 142 128 158 Q146 169 139 188 Q133 203 115 198"/>
+      <path d="M84 320 Q115 318 139 293 Q153 278 165 286"/>
+      <path d="M116 116 Q139 126 154 147 L164 165 L181 170"/>
+      <path d="M57 276 L78 283 L91 299 L108 306"/>
+    </g>
+    <!-- Right grip mirrored tribal engraving -->
+    <g transform="translate(520 0) scale(-1 1)" stroke="url(#violet)" stroke-width="5" opacity=".92" filter="url(#softGlow)">
+      <path d="M54 190 Q90 174 112 194 Q126 207 115 224 Q105 240 83 231 Q67 224 76 211 Q84 202 94 210"/>
+      <path d="M47 242 Q83 250 101 270 Q114 286 99 302 Q86 315 69 302"/>
+      <path d="M70 164 Q100 142 128 158 Q146 169 139 188 Q133 203 115 198"/>
+      <path d="M84 320 Q115 318 139 293 Q153 278 165 286"/>
+      <path d="M116 116 Q139 126 154 147 L164 165 L181 170"/>
+      <path d="M57 276 L78 283 L91 299 L108 306"/>
+    </g>
+    <!-- Fine silver pinstriping -->
+    <g stroke="url(#silver)" stroke-width="2.1" opacity=".72">
+      <path d="M64 111 Q112 78 166 91 L194 105"/>
+      <path d="M456 111 Q408 78 354 91 L326 105"/>
+      <path d="M55 229 Q61 174 83 132"/>
+      <path d="M465 229 Q459 174 437 132"/>
+      <path d="M91 334 Q111 347 130 329 L174 290"/>
+      <path d="M429 334 Q409 347 390 329 L346 290"/>
+    </g>
+  </g>
+  <!-- Small central FireSaints insignia, positioned in the lower bridge area -->
+  <g opacity=".78" text-anchor="middle">
+    <path d="M222 300 L238 290 L260 298 L282 290 L298 300 L289 315 L260 324 L231 315Z" fill="#17131e" stroke="url(#silver)" stroke-width="1.5"/>
+    <text x="260" y="313" font-family="Arial Black,Arial,sans-serif" font-size="15" font-weight="900" letter-spacing="-1" fill="#d9c7f4">FS</text>
+  </g>
+</svg>
