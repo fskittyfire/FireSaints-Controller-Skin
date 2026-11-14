@@ -1,31 +1,21 @@
 /*
   FIRESAINTS — GPV 2 / Xbox One skin
-  Revision 2: appearance-only CSS.
-  Deliberately does NOT change controller positioning, dimensions, transforms,
-  overflow, body sizing, or GPV's input/layout structure.
+  Revision 3: matched silver controls and purple active indicators.
+  GPV retains ownership of controller dimensions, positioning and input.
 */
 
 :root {
-  --fs-purple-deep: #32105c;
   --fs-purple: #8b35d6;
   --fs-purple-bright: #c58bff;
   --fs-silver: #bfc3cc;
-  --fs-glow: rgba(155, 70, 255, .78);
+  --fs-glow: rgba(155, 70, 255, .82);
 }
 
-/*
-  IMPORTANT:
-  Leave .controller.xbox geometry to GPV's native skin.
-  The previous revision forced position:relative and added an absolutely
-  positioned pseudo-element. That could disturb GPV's existing layout and
-  is intentionally removed in this revision.
-*/
-
+/* Keep native controller geometry. */
 .controller.xbox {
   filter: drop-shadow(0 0 7px rgba(113, 40, 180, .20));
 }
 
-/* Smooth transitions without changing the size or position of controls. */
 .xbox .button,
 .xbox .face,
 .xbox .stick,
@@ -36,68 +26,110 @@
   transition: filter 140ms ease, opacity 140ms ease;
 }
 
-/* Silver-toned ABXY faces; retain native geometry and button state. */
+/*
+  Force the four face buttons to the same cool silver tone.
+  A color-remap filter avoids the different brightness inherited from
+  the original green/red/blue/yellow Xbox button artwork.
+*/
 .xbox .button {
-  filter: grayscale(1) brightness(1.42) contrast(1.08);
-  opacity: .96;
+  filter: brightness(0) saturate(100%) invert(82%) sepia(7%)
+          saturate(240%) hue-rotate(185deg) brightness(96%) contrast(90%);
+  opacity: 1;
 }
 
 .xbox .button.pressed {
-  filter: grayscale(1) brightness(1.9) contrast(1.12)
+  filter: brightness(0) saturate(100%) invert(82%) sepia(7%)
+          saturate(240%) hue-rotate(185deg) brightness(112%) contrast(95%)
           drop-shadow(0 0 4px var(--fs-purple-bright))
           drop-shadow(0 0 10px var(--fs-glow));
   opacity: 1;
 }
 
-/* D-pad: silver at rest, purple glow while pressed. */
+/* D-pad: darker brushed silver, not white. */
 .xbox .face {
-  filter: grayscale(1) brightness(1.42) contrast(1.08);
-  opacity: .92;
+  filter: brightness(0) saturate(100%) invert(70%) sepia(7%)
+          saturate(230%) hue-rotate(185deg) brightness(88%) contrast(92%);
+  opacity: .96;
 }
 
 .xbox .face.pressed {
-  filter: grayscale(1) brightness(1.9)
+  filter: brightness(0) saturate(100%) invert(70%) sepia(7%)
+          saturate(230%) hue-rotate(185deg) brightness(108%) contrast(96%)
           drop-shadow(0 0 4px var(--fs-purple-bright))
           drop-shadow(0 0 11px var(--fs-glow));
   opacity: 1;
 }
 
-/* Thumbsticks: dark metallic treatment; glow on stick click. */
+/* Thumbsticks: dark metal with purple edge illumination on click. */
 .xbox .stick {
-  filter: grayscale(1) brightness(.92) contrast(1.16)
+  filter: grayscale(1) brightness(.82) contrast(1.16)
           drop-shadow(0 0 2px rgba(177, 125, 230, .30));
 }
 
 .xbox .stick.pressed {
-  filter: grayscale(1) brightness(1.45)
+  filter: grayscale(1) brightness(1.2)
           drop-shadow(0 0 5px var(--fs-purple-bright))
           drop-shadow(0 0 12px var(--fs-glow));
 }
 
-/* Bumpers and triggers glow independently when pressed/active. */
-.xbox .bumper,
-.xbox .trigger {
-  filter: grayscale(1) brightness(1.30);
+/* Bumpers: retain silver/black surface, purple when held. */
+.xbox .bumper {
+  filter: grayscale(1) brightness(1.15) contrast(1.08);
 }
 
-.xbox .bumper.pressed,
-.xbox .trigger.pressed {
-  filter: grayscale(1) brightness(1.85)
+.xbox .bumper.pressed {
+  filter: grayscale(1) brightness(1.35)
           drop-shadow(0 0 5px var(--fs-purple-bright))
           drop-shadow(0 0 12px var(--fs-glow));
   opacity: 1;
 }
 
-/* View and menu controls. */
+/*
+  Triggers are analog fills. Force the active fill to purple rather than
+  allowing GPV's default white highlight to remain white.
+*/
+.xbox .trigger {
+  filter: none;
+}
+
+.xbox .trigger.pressed {
+  filter: brightness(0) saturate(100%) invert(42%) sepia(82%)
+          saturate(1800%) hue-rotate(242deg) brightness(102%) contrast(105%)
+          drop-shadow(0 0 4px var(--fs-purple-bright))
+          drop-shadow(0 0 10px var(--fs-glow));
+  opacity: 1;
+}
+
+/* Menu / View buttons. */
 .xbox .back,
 .xbox .start {
-  filter: grayscale(1) brightness(1.42);
+  filter: grayscale(1) brightness(1.25);
 }
 
 .xbox .back.pressed,
 .xbox .start.pressed {
-  filter: grayscale(1) brightness(1.95)
+  filter: grayscale(1) brightness(1.8)
           drop-shadow(0 0 5px var(--fs-purple-bright))
           drop-shadow(0 0 10px var(--fs-glow));
   opacity: 1;
+}
+
+/* Player-number quadrant LEDs: recolour the indicator purple. */
+.xbox .quadrant {
+  filter: brightness(0) saturate(100%) invert(42%) sepia(82%)
+          saturate(1800%) hue-rotate(242deg) brightness(102%) contrast(105%)
+          drop-shadow(0 0 3px var(--fs-purple-bright));
+}
+
+/*
+  Xbox Guide / central X logo:
+  GPV skin variants may call this .home or .logo. Apply purple illumination
+  to either known naming convention without changing its layout.
+*/
+.xbox .home,
+.xbox .logo {
+  filter: brightness(0) saturate(100%) invert(42%) sepia(82%)
+          saturate(1800%) hue-rotate(242deg) brightness(102%) contrast(105%)
+          drop-shadow(0 0 4px var(--fs-purple-bright))
+          drop-shadow(0 0 9px var(--fs-glow));
 }
