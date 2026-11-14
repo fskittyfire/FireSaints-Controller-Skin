@@ -1,87 +1,104 @@
 /*
-  FIRESAINTS — GPV 2 / Xbox controller
-  Revision 7: map each face button to its own custom sprite cell.
-  Preserve the working D-pad and player LEDs; retain the shell glow.
-  No geometry or positioning overrides.
+  FIRESAINTS — GPV 2 / Xbox
+  Clean rebuild. No inherited experiments or layout changes.
+  Base shell and input geometry remain GPV-owned.
 */
 
 :root {
   --fs-purple: #8b35d6;
   --fs-purple-bright: #c58bff;
-  --fs-glow: rgba(155, 70, 255, .82);
+  --fs-glow-soft: rgba(139, 53, 214, .72);
+  --fs-glow-strong: rgba(169, 91, 255, .9);
 }
 
-/* Ambient glow around the controller silhouette. */
+/* Whole-controller silhouette glow. Does not alter dimensions or position. */
 .controller.xbox {
-  filter: drop-shadow(0 0 7px rgba(139, 53, 214, .72))
-          drop-shadow(0 0 17px rgba(139, 53, 214, .42));
-  transition: filter 160ms ease;
+  filter:
+    drop-shadow(0 0 6px var(--fs-glow-soft))
+    drop-shadow(0 0 15px rgba(139, 53, 214, .48))
+    drop-shadow(0 0 25px rgba(139, 53, 214, .22));
 }
 
-/* Four-column, two-row sprite: top row idle, bottom row pressed. */
+/* FireSaints grip engraving. Decorative only; no pointer or layout effects. */
+.controller.xbox::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: url("https://fskittyfire.github.io/FireSaints-Controller-Skin/assets/tribal-overlay.svg?v=1")
+              center / 100% 100% no-repeat;
+  opacity: .9;
+  mix-blend-mode: screen;
+}
+
+/* A/B/X/Y: custom black-and-silver artwork.
+   Four columns; idle row above, purple-accented pressed row below. */
 .xbox .button {
-  background-image: url("https://fskittyfire.github.io/FireSaints-Controller-Skin/assets/abxy-firesaints.svg?v=1");
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-size: 400% 200%;
-  filter: none;
+  background-image: url("https://fskittyfire.github.io/FireSaints-Controller-Skin/assets/abxy-firesaints.svg?v=2") !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-size: 400% 200% !important;
+  filter: none !important;
   opacity: 1;
   transition: filter 140ms ease;
 }
 
-.xbox .button.a, .xbox .a { background-position: 0% 0%; }
-.xbox .button.b, .xbox .b { background-position: 33.3333% 0%; }
-.xbox .button.x, .xbox .x { background-position: 66.6667% 0%; }
-.xbox .button.y, .xbox .y { background-position: 100% 0%; }
+.xbox .button.a { background-position: 0% 0% !important; }
+.xbox .button.b { background-position: 33.3333% 0% !important; }
+.xbox .button.x { background-position: 66.6667% 0% !important; }
+.xbox .button.y { background-position: 100% 0% !important; }
 
-.xbox .button.a.pressed, .xbox .a.pressed { background-position: 0% 100%; }
-.xbox .button.b.pressed, .xbox .b.pressed { background-position: 33.3333% 100%; }
-.xbox .button.x.pressed, .xbox .x.pressed { background-position: 66.6667% 100%; }
-.xbox .button.y.pressed, .xbox .y.pressed { background-position: 100% 100%; }
+.xbox .button.a.pressed { background-position: 0% 100% !important; }
+.xbox .button.b.pressed { background-position: 33.3333% 100% !important; }
+.xbox .button.x.pressed { background-position: 66.6667% 100% !important; }
+.xbox .button.y.pressed { background-position: 100% 100% !important; }
 
-.xbox .button.pressed,
-.xbox .a.pressed, .xbox .b.pressed, .xbox .x.pressed, .xbox .y.pressed {
-  filter: drop-shadow(0 0 4px var(--fs-purple-bright))
-          drop-shadow(0 0 10px var(--fs-glow));
+.xbox .button.pressed {
+  filter:
+    drop-shadow(0 0 4px var(--fs-purple-bright))
+    drop-shadow(0 0 10px var(--fs-glow-strong)) !important;
 }
 
-/* Keep the D-pad exactly as in the working revision. */
+/* D-pad: silver finish, purple glow while pressed. */
 .xbox .face {
-  filter: grayscale(1) brightness(.82) contrast(1.12);
+  filter: grayscale(1) brightness(.84) contrast(1.12);
   opacity: 1;
   transition: filter 140ms ease, opacity 140ms ease;
 }
 
 .xbox .face.pressed {
-  filter: grayscale(1) brightness(1.08) contrast(1.15)
-          drop-shadow(0 0 4px var(--fs-purple-bright))
-          drop-shadow(0 0 10px var(--fs-glow));
+  filter:
+    grayscale(1) brightness(1.04) contrast(1.16)
+    drop-shadow(0 0 4px var(--fs-purple-bright))
+    drop-shadow(0 0 10px var(--fs-glow-strong));
   opacity: 1;
 }
 
-/* Other controls retain native artwork and purple pressed feedback. */
-.xbox .stick, .xbox .bumper, .xbox .back, .xbox .start {
+/* Bumpers, triggers, sticks, and menu controls: purple active glow. */
+.xbox .bumper,
+.xbox .trigger,
+.xbox .stick,
+.xbox .back,
+.xbox .start {
   transition: filter 140ms ease;
 }
 
-.xbox .stick.pressed, .xbox .bumper.pressed,
-.xbox .back.pressed, .xbox .start.pressed {
-  filter: drop-shadow(0 0 4px var(--fs-purple-bright))
-          drop-shadow(0 0 10px var(--fs-glow));
+.xbox .bumper.pressed,
+.xbox .trigger.pressed,
+.xbox .stick.pressed,
+.xbox .back.pressed,
+.xbox .start.pressed {
+  filter:
+    drop-shadow(0 0 4px var(--fs-purple-bright))
+    drop-shadow(0 0 10px var(--fs-glow-strong));
 }
 
-/* Analog trigger fill. */
-.xbox .trigger { filter: none; }
-
-.xbox .trigger.pressed {
-  filter: hue-rotate(245deg) saturate(1.8)
-          drop-shadow(0 0 4px var(--fs-purple-bright))
-          drop-shadow(0 0 9px var(--fs-glow));
-}
-
-/* Player indicator LEDs. */
+/* Player LEDs: FireSaints purple. */
 .xbox .quadrant {
-  filter: brightness(0) saturate(100%) invert(42%) sepia(82%)
-          saturate(1800%) hue-rotate(242deg) brightness(102%) contrast(105%)
-          drop-shadow(0 0 3px var(--fs-purple-bright));
+  filter:
+    brightness(0) saturate(100%)
+    invert(42%) sepia(82%) saturate(1800%)
+    hue-rotate(242deg) brightness(102%) contrast(105%)
+    drop-shadow(0 0 3px var(--fs-purple-bright));
 }
