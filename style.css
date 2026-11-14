@@ -1,7 +1,7 @@
 /*
   FIRESAINTS — GPV 2 / Xbox controller
-  Revision 6: custom black-and-silver ABXY sprite, purple pressed state,
-  silver D-pad, purple player LEDs, and a full controller silhouette glow.
+  Revision 7: map each face button to its own custom sprite cell.
+  Preserve the working D-pad and player LEDs; retain the shell glow.
   No geometry or positioning overrides.
 */
 
@@ -11,32 +11,41 @@
   --fs-glow: rgba(155, 70, 255, .82);
 }
 
-/* Glow follows the controller silhouette without changing its dimensions. */
+/* Ambient glow around the controller silhouette. */
 .controller.xbox {
   filter: drop-shadow(0 0 7px rgba(139, 53, 214, .72))
           drop-shadow(0 0 17px rgba(139, 53, 214, .42));
   transition: filter 160ms ease;
 }
 
-/* Custom sprite separates the silver letters from the black button bodies. */
+/* Four-column, two-row sprite: top row idle, bottom row pressed. */
 .xbox .button {
   background-image: url("https://fskittyfire.github.io/FireSaints-Controller-Skin/assets/abxy-firesaints.svg?v=1");
   background-color: transparent;
   background-repeat: no-repeat;
-  background-size: 196px 96px;
+  background-size: 400% 200%;
   filter: none;
   opacity: 1;
-  transition: filter 140ms ease, opacity 140ms ease;
+  transition: filter 140ms ease;
 }
 
-/* Pressed artwork is the second sprite row; glow follows the round artwork. */
-.xbox .button.pressed {
+.xbox .button.a, .xbox .a { background-position: 0% 0%; }
+.xbox .button.b, .xbox .b { background-position: 33.3333% 0%; }
+.xbox .button.x, .xbox .x { background-position: 66.6667% 0%; }
+.xbox .button.y, .xbox .y { background-position: 100% 0%; }
+
+.xbox .button.a.pressed, .xbox .a.pressed { background-position: 0% 100%; }
+.xbox .button.b.pressed, .xbox .b.pressed { background-position: 33.3333% 100%; }
+.xbox .button.x.pressed, .xbox .x.pressed { background-position: 66.6667% 100%; }
+.xbox .button.y.pressed, .xbox .y.pressed { background-position: 100% 100%; }
+
+.xbox .button.pressed,
+.xbox .a.pressed, .xbox .b.pressed, .xbox .x.pressed, .xbox .y.pressed {
   filter: drop-shadow(0 0 4px var(--fs-purple-bright))
           drop-shadow(0 0 10px var(--fs-glow));
-  opacity: 1;
 }
 
-/* Keep the D-pad silver, slightly darker than bright white. */
+/* Keep the D-pad exactly as in the working revision. */
 .xbox .face {
   filter: grayscale(1) brightness(.82) contrast(1.12);
   opacity: 1;
@@ -50,26 +59,19 @@
   opacity: 1;
 }
 
-/* Other controls retain their native artwork and gain purple feedback. */
-.xbox .stick,
-.xbox .bumper,
-.xbox .back,
-.xbox .start {
+/* Other controls retain native artwork and purple pressed feedback. */
+.xbox .stick, .xbox .bumper, .xbox .back, .xbox .start {
   transition: filter 140ms ease;
 }
 
-.xbox .stick.pressed,
-.xbox .bumper.pressed,
-.xbox .back.pressed,
-.xbox .start.pressed {
+.xbox .stick.pressed, .xbox .bumper.pressed,
+.xbox .back.pressed, .xbox .start.pressed {
   filter: drop-shadow(0 0 4px var(--fs-purple-bright))
           drop-shadow(0 0 10px var(--fs-glow));
 }
 
-/* Analog trigger fill: purple while active. */
-.xbox .trigger {
-  filter: none;
-}
+/* Analog trigger fill. */
+.xbox .trigger { filter: none; }
 
 .xbox .trigger.pressed {
   filter: hue-rotate(245deg) saturate(1.8)
