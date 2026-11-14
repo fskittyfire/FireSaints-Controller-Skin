@@ -1,190 +1,89 @@
 /*
   FIRESAINTS // BLACKOUT PURPLE
-  Gamepad Viewer - Xbox / Xbox Series edit-skin stylesheet
-  Usage: load the Xbox skin, then apply this file with editcss=.
-  No external image assets, JavaScript, fonts, or libraries required.
+  Conservative Gamepad Viewer override.
+  Keeps the selected Xbox skin's native geometry and positioning intact.
 */
 
-/* ---------- Brand palette ---------- */
+/* Purple accent palette */
 :root {
   --fs-purple: #9b35ff;
   --fs-violet: #6d19d7;
-  --fs-hot: #d6a0ff;
-  --fs-deep: #240044;
-  --fs-ink: #09070d;
-  --fs-glow: rgba(155, 53, 255, .92);
-  --fs-soft-glow: rgba(125, 35, 230, .58);
+  --fs-lilac: #e5c4ff;
 }
 
-/* ---------- Controller shell ---------- */
-.controller.edit {
-  position: relative !important;
-  isolation: isolate;
-  overflow: visible !important;
-  /* Tint/darken the stock Xbox artwork into the blackout palette. */
-  filter: brightness(.62) contrast(1.18) saturate(.72) hue-rotate(246deg)
-          drop-shadow(0 0 8px rgba(116, 29, 205, .38))
-          drop-shadow(0 10px 18px rgba(0, 0, 0, .72));
-}
+/*
+  Do not apply filters, backgrounds, positioning, or z-index to the
+  controller wrapper. Gamepad Viewer owns the controller layout and artwork.
+*/
 
-/* Low-profile purple edge lighting around the whole controller.
-   Kept behind the live controls so it cannot block input visuals. */
-.controller.edit::before {
-  content: "FIRESAINTS";
-  position: absolute;
-  z-index: 0;
-  left: 50%;
-  top: 51%;
-  transform: translate(-50%, -50%) skew(-8deg);
-  color: rgba(190, 117, 255, .12);
-  font: 900 clamp(18px, 4.5vw, 42px)/1 "Arial Black", Impact, sans-serif;
-  letter-spacing: .22em;
-  white-space: nowrap;
-  pointer-events: none;
-  text-shadow: 0 0 12px rgba(145, 42, 255, .18);
-}
-
-/* Keep interactive artwork above the branding layer. */
-.controller.edit .triggers,
-.controller.edit .bumpers,
-.controller.edit .quadrant,
-.controller.edit .arrows,
-.controller.edit .abxy,
-.controller.edit .sticks,
-.controller.edit .dpad {
-  position: absolute;
-  z-index: 3;
-}
-
-/* ---------- Triggers: L2 / R2 ---------- */
+/* Triggers */
 .controller.edit .trigger {
-  transition: filter .08s ease, opacity .08s ease, box-shadow .08s ease;
-  filter: grayscale(1) brightness(.68) sepia(.25) hue-rotate(225deg)
-          saturate(2.4) contrast(1.18);
-  opacity: .92;
-  border-radius: 10px;
+  transition: filter .08s ease;
+  filter: grayscale(.65) brightness(.78) sepia(.35) hue-rotate(238deg) saturate(2.1);
 }
 .controller.edit .trigger.pressed {
-  opacity: 1;
-  filter: grayscale(.15) brightness(1.55) sepia(.35) hue-rotate(230deg)
-          saturate(4) contrast(1.25);
-  box-shadow:
-    0 0 5px 2px rgba(214, 160, 255, .95),
-    0 0 13px 5px rgba(155, 53, 255, .88),
-    0 0 27px 9px rgba(109, 25, 215, .62);
+  filter: brightness(1.45) saturate(2.8) hue-rotate(245deg)
+    drop-shadow(0 0 4px var(--fs-lilac))
+    drop-shadow(0 0 9px var(--fs-purple))
+    drop-shadow(0 0 16px var(--fs-violet));
 }
 
-/* ---------- Bumpers: LB / RB ---------- */
+/* Bumpers */
 .controller.edit .bumper {
-  transition: filter .08s ease, opacity .08s ease, box-shadow .08s ease;
-  filter: grayscale(1) brightness(.62) sepia(.3) hue-rotate(230deg)
-          saturate(2.8) contrast(1.2);
-  opacity: .96;
-  border-radius: 7px;
+  transition: filter .08s ease;
+  filter: grayscale(.65) brightness(.8) sepia(.35) hue-rotate(238deg) saturate(2.1);
 }
 .controller.edit .bumper.pressed {
-  opacity: 1;
-  filter: grayscale(.1) brightness(1.7) sepia(.35) hue-rotate(230deg)
-          saturate(4.2) contrast(1.25);
-  box-shadow:
-    0 0 5px 2px rgba(214, 160, 255, .95),
-    0 0 14px 5px rgba(155, 53, 255, .9),
-    0 0 25px 8px rgba(109, 25, 215, .65);
+  filter: brightness(1.5) saturate(2.8) hue-rotate(245deg)
+    drop-shadow(0 0 4px var(--fs-lilac))
+    drop-shadow(0 0 10px var(--fs-purple))
+    drop-shadow(0 0 17px var(--fs-violet));
 }
 
-/* ---------- D-pad ---------- */
+/* D-pad directions */
 .controller.edit .face {
-  transition: filter .07s ease, box-shadow .07s ease;
-  filter: grayscale(1) brightness(.72) sepia(.3) hue-rotate(230deg)
-          saturate(2.5) contrast(1.22);
+  transition: filter .08s ease;
+  filter: grayscale(.7) brightness(.82) sepia(.3) hue-rotate(238deg) saturate(2);
 }
 .controller.edit .face.pressed {
-  filter: grayscale(.08) brightness(1.72) sepia(.35) hue-rotate(230deg)
-          saturate(4.5) contrast(1.25);
-  box-shadow:
-    0 0 5px 2px rgba(214, 160, 255, .98),
-    0 0 13px 5px rgba(155, 53, 255, .92),
-    0 0 24px 8px rgba(109, 25, 215, .68);
+  filter: brightness(1.55) saturate(3) hue-rotate(245deg)
+    drop-shadow(0 0 4px var(--fs-lilac))
+    drop-shadow(0 0 10px var(--fs-purple))
+    drop-shadow(0 0 17px var(--fs-violet));
 }
 
-/* ---------- ABXY face buttons ---------- */
+/* ABXY buttons */
 .controller.edit .button {
-  transition: filter .07s ease, box-shadow .07s ease;
-  filter: grayscale(1) brightness(.78) sepia(.28) hue-rotate(230deg)
-          saturate(2.6) contrast(1.2);
+  transition: filter .08s ease;
+  filter: grayscale(.7) brightness(.82) sepia(.3) hue-rotate(238deg) saturate(2);
 }
 .controller.edit .button.pressed {
-  filter: grayscale(.05) brightness(1.8) sepia(.35) hue-rotate(230deg)
-          saturate(4.5) contrast(1.28);
-  box-shadow:
-    0 0 5px 2px rgba(235, 208, 255, .98),
-    0 0 14px 5px rgba(155, 53, 255, .95),
-    0 0 27px 9px rgba(109, 25, 215, .72);
+  filter: brightness(1.6) saturate(3.1) hue-rotate(245deg)
+    drop-shadow(0 0 4px var(--fs-lilac))
+    drop-shadow(0 0 10px var(--fs-purple))
+    drop-shadow(0 0 18px var(--fs-violet));
 }
 
-/* ---------- Analog sticks ---------- */
+/* Analog sticks */
 .controller.edit .stick {
-  transition: filter .08s ease, box-shadow .08s ease;
-  filter: grayscale(1) brightness(.78) sepia(.2) hue-rotate(230deg)
-          saturate(2.2) contrast(1.2);
+  transition: filter .08s ease;
+  filter: grayscale(.65) brightness(.84) sepia(.25) hue-rotate(238deg) saturate(1.9);
 }
 .controller.edit .stick.pressed {
-  filter: grayscale(.1) brightness(1.5) sepia(.3) hue-rotate(230deg)
-          saturate(3.5) contrast(1.2);
-  box-shadow:
-    0 0 5px 2px rgba(214, 160, 255, .85),
-    0 0 15px 5px rgba(155, 53, 255, .75);
+  filter: brightness(1.4) saturate(2.6) hue-rotate(245deg)
+    drop-shadow(0 0 4px var(--fs-lilac))
+    drop-shadow(0 0 9px var(--fs-purple));
 }
 
-/* ---------- Menu / View / Start buttons ---------- */
+/* View / Menu buttons and player indicator */
 .controller.edit .back,
-.controller.edit .start {
-  filter: grayscale(1) brightness(.9) sepia(.25) hue-rotate(230deg)
-          saturate(2.4);
-  transition: filter .08s ease, box-shadow .08s ease;
+.controller.edit .start,
+.controller.edit .quadrant {
+  transition: filter .08s ease;
+  filter: grayscale(.55) brightness(.9) sepia(.25) hue-rotate(238deg) saturate(1.8);
 }
 .controller.edit .back.pressed,
 .controller.edit .start.pressed {
-  filter: grayscale(.1) brightness(1.65) sepia(.3) hue-rotate(230deg)
-          saturate(3.5);
-  box-shadow: 0 0 8px 3px rgba(155, 53, 255, .82);
-}
-
-/* ---------- Xbox player / connection indicator ---------- */
-.controller.edit .quadrant {
-  filter: grayscale(.15) brightness(1.4) sepia(.35) hue-rotate(230deg)
-          saturate(3.5) drop-shadow(0 0 5px rgba(155, 53, 255, .9));
-}
-
-/* ---------- Disconnect state ---------- */
-.controller.edit.disconnected {
-  opacity: .48;
-  filter: grayscale(1) brightness(.48);
-}
-
-
-/* Compatibility selectors: Gamepad Viewer marks the controller with .edit.
-   These shorter selectors also cover builds that wrap the controller differently. */
-.edit .trigger.pressed,
-.edit .bumper.pressed,
-.edit .button.pressed,
-.edit .face.pressed {
-  filter: brightness(1.8) saturate(1.65) hue-rotate(246deg) !important;
-  box-shadow:
-    0 0 5px 2px rgba(235, 208, 255, .98),
-    0 0 14px 5px rgba(155, 53, 255, .95),
-    0 0 28px 10px rgba(109, 25, 215, .78) !important;
-}
-
-.edit .trigger,
-.edit .bumper,
-.edit .button,
-.edit .face {
-  transition: filter .07s ease, box-shadow .07s ease !important;
-}
-
-/* Make the controller silhouette read as near-black rather than stock grey. */
-.controller.edit {
-  background-color: #09070d !important;
-  background-blend-mode: multiply, normal;
+  filter: brightness(1.45) saturate(2.6) hue-rotate(245deg)
+    drop-shadow(0 0 5px var(--fs-purple));
 }
