@@ -21,7 +21,9 @@
   position: relative !important;
   isolation: isolate;
   overflow: visible !important;
-  filter: drop-shadow(0 0 7px rgba(116, 29, 205, .25))
+  /* Tint/darken the stock Xbox artwork into the blackout palette. */
+  filter: brightness(.62) contrast(1.18) saturate(.72) hue-rotate(246deg)
+          drop-shadow(0 0 8px rgba(116, 29, 205, .38))
           drop-shadow(0 10px 18px rgba(0, 0, 0, .72));
 }
 
@@ -158,4 +160,31 @@
 .controller.edit.disconnected {
   opacity: .48;
   filter: grayscale(1) brightness(.48);
+}
+
+
+/* Compatibility selectors: Gamepad Viewer marks the controller with .edit.
+   These shorter selectors also cover builds that wrap the controller differently. */
+.edit .trigger.pressed,
+.edit .bumper.pressed,
+.edit .button.pressed,
+.edit .face.pressed {
+  filter: brightness(1.8) saturate(1.65) hue-rotate(246deg) !important;
+  box-shadow:
+    0 0 5px 2px rgba(235, 208, 255, .98),
+    0 0 14px 5px rgba(155, 53, 255, .95),
+    0 0 28px 10px rgba(109, 25, 215, .78) !important;
+}
+
+.edit .trigger,
+.edit .bumper,
+.edit .button,
+.edit .face {
+  transition: filter .07s ease, box-shadow .07s ease !important;
+}
+
+/* Make the controller silhouette read as near-black rather than stock grey. */
+.controller.edit {
+  background-color: #09070d !important;
+  background-blend-mode: multiply, normal;
 }
