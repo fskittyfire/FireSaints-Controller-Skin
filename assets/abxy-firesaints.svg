@@ -1,54 +1,54 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="196" height="96" viewBox="0 0 196 96">
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="96" viewBox="0 0 192 96">
   <defs>
-    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#25232c"/>
-      <stop offset="1" stop-color="#08080c"/>
+    <linearGradient id="idle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#24212b"/>
+      <stop offset="1" stop-color="#07070b"/>
     </linearGradient>
-    <linearGradient id="pressed" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#30243a"/>
-      <stop offset="1" stop-color="#09070e"/>
+    <linearGradient id="active" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#24142f"/>
+      <stop offset="1" stop-color="#08060c"/>
     </linearGradient>
   </defs>
   <g font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" text-anchor="middle" dominant-baseline="central">
     <g transform="translate(0 0)">
-      <circle cx="24" cy="24" r="19.5" fill="url(#body)" stroke="#55515f" stroke-width="2"/>
-      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#111016" stroke-width="1"/>
-      <text x="24" y="24.5" fill="#d1ced9">A</text>
+      <circle cx="24" cy="24" r="19" fill="url(#idle)" stroke="#9da1ad" stroke-width="1.7"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#45434d" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#e0e1e7">A</text>
     </g>
-    <g transform="translate(49 0)">
-      <circle cx="24" cy="24" r="19.5" fill="url(#body)" stroke="#55515f" stroke-width="2"/>
-      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#111016" stroke-width="1"/>
-      <text x="24" y="24.5" fill="#d1ced9">B</text>
+    <g transform="translate(48 0)">
+      <circle cx="24" cy="24" r="19" fill="url(#idle)" stroke="#9da1ad" stroke-width="1.7"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#45434d" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#e0e1e7">B</text>
     </g>
-    <g transform="translate(98 0)">
-      <circle cx="24" cy="24" r="19.5" fill="url(#body)" stroke="#55515f" stroke-width="2"/>
-      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#111016" stroke-width="1"/>
-      <text x="24" y="24.5" fill="#d1ced9">X</text>
+    <g transform="translate(96 0)">
+      <circle cx="24" cy="24" r="19" fill="url(#idle)" stroke="#9da1ad" stroke-width="1.7"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#45434d" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#e0e1e7">X</text>
     </g>
-    <g transform="translate(147 0)">
-      <circle cx="24" cy="24" r="19.5" fill="url(#body)" stroke="#55515f" stroke-width="2"/>
-      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#111016" stroke-width="1"/>
-      <text x="24" y="24.5" fill="#d1ced9">Y</text>
+    <g transform="translate(144 0)">
+      <circle cx="24" cy="24" r="19" fill="url(#idle)" stroke="#9da1ad" stroke-width="1.7"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#45434d" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#e0e1e7">Y</text>
     </g>
     <g transform="translate(0 48)">
-      <circle cx="24" cy="24" r="19.5" fill="url(#pressed)" stroke="#a75cff" stroke-width="2.5"/>
-      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#39204f" stroke-width="1"/>
-      <text x="24" y="24.5" fill="#ded8e8">A</text>
+      <circle cx="24" cy="24" r="19" fill="url(#active)" stroke="#b56cff" stroke-width="2.2"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#69358f" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#f0e8fa">A</text>
     </g>
-    <g transform="translate(49 48)">
-      <circle cx="24" cy="24" r="19.5" fill="url(#pressed)" stroke="#a75cff" stroke-width="2.5"/>
-      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#39204f" stroke-width="1"/>
-      <text x="24" y="24.5" fill="#ded8e8">B</text>
+    <g transform="translate(48 48)">
+      <circle cx="24" cy="24" r="19" fill="url(#active)" stroke="#b56cff" stroke-width="2.2"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#69358f" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#f0e8fa">B</text>
     </g>
-    <g transform="translate(98 48)">
-      <circle cx="24" cy="24" r="19.5" fill="url(#pressed)" stroke="#a75cff" stroke-width="2.5"/>
-      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#39204f" stroke-width="1"/>
-      <text x="24" y="24.5" fill="#ded8e8">X</text>
+    <g transform="translate(96 48)">
+      <circle cx="24" cy="24" r="19" fill="url(#active)" stroke="#b56cff" stroke-width="2.2"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#69358f" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#f0e8fa">X</text>
     </g>
-    <g transform="translate(147 48)">
-      <circle cx="24" cy="24" r="19.5" fill="url(#pressed)" stroke="#a75cff" stroke-width="2.5"/>
-      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#39204f" stroke-width="1"/>
-      <text x="24" y="24.5" fill="#ded8e8">Y</text>
+    <g transform="translate(144 48)">
+      <circle cx="24" cy="24" r="19" fill="url(#active)" stroke="#b56cff" stroke-width="2.2"/>
+      <circle cx="24" cy="24" r="16.5" fill="none" stroke="#69358f" stroke-width="1"/>
+      <text x="24" y="24.5" fill="#f0e8fa">Y</text>
     </g>
   </g>
 </svg>
